@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="content/bootstrap.min.css">
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="script/index.js"></script>
+    <title>Document</title>
+
+    <style>
+        .active-price {
+            font-size: 2em;
+            color: green;
+        }
+
+        div[name*=ingCa] {
+            display: none;
+            position: absolute;
+            top: 25%;
+            width: 60%;
+            margin-left: 20%;
+            box-shadow: 0 0 15px green;
+            border-radius: 8px;
+            border: 1px solid yellowgreen;
+            z-index: 1000;
+            height: 300px;
+        }
+
+        .panel-body {
+            height: 205px;
+            overflow: auto;
+        }
+
+        tbody tr td img {
+            width: 20%
+        }
+
+        .panel-heading.bottom-price{
+            position:relative;
+        }
+        .panel-heading.bottom-price label{
+            position:absolute;
+            right: 20px;
+        }
+
+        .total-price:after{
+            content : ' €';
+        }
+
+        .thumbnail img{
+            height:120px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div name="shoppingCart">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Shopping cart</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Price HT</th>
+                            <th>Qte.</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="panel-heading bottom-price">
+
+                <button type="button" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    Fermer</button>
+                    <label class="total-price"></label>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <script type="text/template" id="rowTemplate">
+        <tr>
+            <td>
+                <img class="img-responsive">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <button class="btn btn-warning">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+    </script>
+</body>
+
+</html>

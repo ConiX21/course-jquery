@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/jquery.min.js"></script>
+    <style>
+        @media screen and (min-width: 200px) and (max-width: 320px) {
+            .paragraph{
+                color:cyan;
+            }  
+        }
+        
+        @media screen and (min-width: 320px) and (max-width: 640px) {
+            .paragraph{
+                color:yellowgreen;
+            }  
+        }
+        
+    </style>
+
+    <script>
+        $(document).ready(function () {
+           var v = $(".none:eq(0)").text("Hello");
+
+           $("p:eq(0)")
+                .css({"color":"orange","background-color" : "grey"})
+                .find("span:eq(1)")
+                    .css("color","red")
+                    .end()
+                .css("font-style", "italic")
+                .find("span:last")
+                    .css("font-size" , "2em");
+            //. => class
+            //# => id
+            // => balise
+            $("p:eq(1)").addClass("paragraph");
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="none" id="div2"></div>
+    <div id="div1"></div>
+    <div class="none" id="div3"></div>
+    <p>
+        <span>span 1</span>
+        <span>span 2</span>
+        <span>span 3</span>
+    </p>
+    <p>
+        hello
+    </p>
+
+</body>
+
+</html>

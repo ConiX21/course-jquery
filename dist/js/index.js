@@ -1,0 +1,1 @@
+$(document).ready(function(){$('<div class="container-fluid"></div>').appendTo("body")});
